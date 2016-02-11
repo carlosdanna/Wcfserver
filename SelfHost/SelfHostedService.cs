@@ -29,13 +29,15 @@ namespace SelfHost
             return clientToken;
         }
 
-        public bool PostTransaction(string nonce_data, int amount, string transactionData)
+        public bool PostTransaction(string nonce_data, decimal amount, string transactionData)
         {
             var request = new TransactionRequest
             {
                 Amount = amount,
+                MerchantAccountId="TTP",
                 PaymentMethodNonce = nonce_data,
-                CustomerId = "26193738",
+                CustomerId = "36428238",
+                ServiceFeeAmount= 1.0M,
 
                 Options = new TransactionOptionsRequest
                 {
